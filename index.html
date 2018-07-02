@@ -12,9 +12,13 @@
 		<meta charset="UTF-8">
 		<title id="cuTitle"></title>
 		<script>
-			var title=decodeURIComponent(getParameter("a"));
-			if(!!title&&title!="null")
-				document.getElementById("cuTitle").innerHTML=title;
+			var a=getParameter("a");
+			if(!!a){
+				var title=decodeURIComponent(a.replace(/@/g,"%"));
+				if(!!title&&title!="null")
+					document.getElementById("cuTitle").innerHTML=title;
+			}
+			
 		</script>
 		<meta name="referrer" content="no-referrer" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0,  minimum-scale=1.0, maximum-scale=1.0" />
@@ -105,7 +109,7 @@
 			<textarea id="zqTitle"></textarea>
 			<button id="createFWBtn">生成网站链接</button>
 			<label>下方是生成的待分享的链接:</label>
-			<textarea id="result"></textarea>
+			<textarea id="result" readonly="readonly"></textarea>
 			<button id="openhf" style="display: none;">
 				直接打开待分享的链接
 			</button>
@@ -122,7 +126,7 @@
 				生成我的邀请链接
 			</button>
 			<label>下方是生成的子用户的邀请链接:</label>
-			<textarea id="userUrlResult"></textarea>
+			<textarea id="userUrlResult" readonly="readonly"></textarea>
 		</div>
 		<script>
 			var isSet=getParameter("b");
@@ -162,7 +166,7 @@
 					url+="&d="+getParameter("d");
 					url+="&f="+dge("zfbkeyText").value;
 					url+="&e="+dge("urlText").value;
-					url+="&a="+dge("zqTitle").value;
+					url+="&a="+encodeURIComponent(dge("zqTitle").value).replace(/%/g,"@");
 					dge("result").value=url;
 					dge("openhf").style.display="block";
 					dge("addUserBtn").style.display="block";
