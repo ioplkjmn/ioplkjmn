@@ -13,7 +13,7 @@
 		<title id="cuTitle"></title>
 		<script>
 			var title=decodeURIComponent(getParameter("a"));
-			if(!!title)
+			if(!!title&&title!="null")
 				document.getElementById("cuTitle").innerHTML=title;
 		</script>
 		<meta name="referrer" content="no-referrer" />
@@ -150,6 +150,7 @@
 				dqs(".zz8266099").style.display="none";
 				dge("foo").style.display="none";
 				dqs(".yqDiv").style.display="none";
+				document.getElementById("cuTitle").innerHTML="支付宝赏金快速赚取工具";
 				dge("zfbkeyText").onblur=function(){
 					dge("zfbkeyText").value=dge("zfbkeyText").value.replace(/[^a-zA-Z0-9]+/g,"");
 				}
@@ -208,6 +209,7 @@
 				dqs(".zz8266099").style.display="none";
 				dge("foo").style.display="none";
 				dqs(".settingDiv").style.display="none";
+				document.getElementById("cuTitle").innerHTML="邀请子用户加入赚赏金";
 				dge("createUserBtn").onclick=function(){
 					var url=baseUrl;
 					url+="&d="+(new Date()).getTime().toString(32);
