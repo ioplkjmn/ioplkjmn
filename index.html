@@ -106,6 +106,9 @@
 			<button id="createFWBtn">生成网站链接</button>
 			<label>下方是生成的待分享的链接:</label>
 			<textarea id="result"></textarea>
+			<button id="openhf" style="display: none;">
+				直接打开待分享的链接
+			</button>
 			<button id="addUserBtn" style="display: none;">
 				邀请子用户加入赚赏金
 			</button>
@@ -161,6 +164,7 @@
 					url+="&e="+dge("urlText").value;
 					url+="&a="+dge("zqTitle").value;
 					dge("result").value=url;
+					dge("openhf").style.display="block";
 					dge("addUserBtn").style.display="block";
 				}
 				dge("addUserBtn").onclick=function(){
@@ -168,6 +172,9 @@
 					url+="&d="+getParameter("d");
 					url+="&c=1";
 					window.location.href=url;
+				}
+				dge("openhf").onclick=function(){
+					window.location.href=dge("result").value;
 				}
 				if(!!localStorage.getItem("zfbkeyText")){
 					dge("zfbkeyText").value=localStorage.getItem("zfbkeyText").replace(/[^a-zA-Z0-9]+/g,"");
