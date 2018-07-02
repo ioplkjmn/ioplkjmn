@@ -159,7 +159,7 @@
 					url+="&d="+getParameter("d");
 					url+="&f="+dge("zfbkeyText").value;
 					url+="&e="+dge("urlText").value;
-					url+="&a="+dge("zqTitle").value;
+					url+="&a="+encodeURIComponent(dge("zqTitle").value);
 					dge("result").value=url;
 					dge("addUserBtn").style.display="block";
 				}
