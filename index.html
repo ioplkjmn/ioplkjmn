@@ -198,12 +198,14 @@
 				}
 				dge("urlText").onchange=function(){
 					localStorage.setItem("urlText",dge("urlText").value);
+					dge("zqTitle").value="";
 				}
 				dge("zfbkeyText").oninput=function(){
 					localStorage.setItem("zfbkeyText",dge("zfbkeyText").value);
 				}
 				dge("urlText").oninput=function(){
 					localStorage.setItem("urlText",dge("urlText").value);
+					dge("zqTitle").value="";
 				}
 				dge("urlText").onblur=function(){
 					var val=dge("urlText").value;
