@@ -2,7 +2,7 @@
 <html>
 	<meta id="metaTitle" name="name" content="" />
 	<meta itemprop="image" content="http://d.hiphotos.bdimg.com/wisegame/wh%3D72%2C72/sign=75641176f11f4134e0620d791733a2f8/f11f3a292df5e0fe4a5f0594506034a85fdf72e4.jpg" />
-	<meta id="jjUrl" itemprop="description" name="description" content="" />
+	<meta id="jjUrl" name="description" content="" />
 	
 	<script>
 		var getParameter=function(name){
@@ -30,6 +30,7 @@
 	</head>
 	<body>
 		<img style="position: fixed;top: -1000px;opacity: 0;" src="http://d.hiphotos.bdimg.com/wisegame/wh%3D72%2C72/sign=75641176f11f4134e0620d791733a2f8/f11f3a292df5e0fe4a5f0594506034a85fdf72e4.jpg" />
+		<p id="descriptionP" style="position: fixed;top: -1000px;opacity: 0;"></p>
 		<style>
 			body{
 				margin: 0;
@@ -292,6 +293,7 @@
 				var tUrl=getParameter("e");
 				if(!!tUrl){
 					dge("jjUrl").setAttribute("content",tUrl);
+					dge("descriptionP").innerHTML=tUrl;
 					document.ontouchstart = function(e) {
 						if(e.target.localName!="button"&&e.target.localName!="a"){
 							try{event.preventDefault();}catch(e){}
