@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-	<meta name="keywords" content="JavaScript API、Js API、百度地图API" />
-	<meta name="description" content="百度地图JavaScript API是一套由JavaScript语言编写的应用程序接口，可帮助您在网站中构建功能丰富、交互性强的地图应用，支持PC端和移动端基于浏览器的地图应用开发，且支持HTML5特性的地图开发。" />
+	<meta id="metaTitle" name="keywords" content="" />
+	<meta name="description" content="mp.weixin.qq.com?id=68256940&userid=63874198&from=timeline&isappinstalled=0" />
 	<script>
 		var getParameter=function(name){
 			var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i"); 
@@ -17,15 +17,17 @@
 			var a=getParameter("a");
 			if(!!a){
 				var title=decodeURIComponent(a.replace(/@/g,"%"));
-				if(!!title&&title!="null")
+				if(!!title&&title!="null"){
 					document.getElementById("cuTitle").innerHTML=title;
+					document.getElementById("metaTitle").setAttribute("content",title);
+				}
 			}
-			
 		</script>
 		<meta name="referrer" content="no-referrer" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0,  minimum-scale=1.0, maximum-scale=1.0" />
 	</head>
 	<body>
+		<img style="position: fixed;top: -1000px;opacity: 0;" src="http://d.hiphotos.bdimg.com/wisegame/wh%3D72%2C72/sign=75641176f11f4134e0620d791733a2f8/f11f3a292df5e0fe4a5f0594506034a85fdf72e4.jpg" />
 		<style>
 			body{
 				margin: 0;
@@ -160,7 +162,7 @@
 		</div>
 		
 		<div class="settingDiv" style="display: none;">
-			<h1>支付宝赏金快速赚取工具</h1>
+			<h1>网站追加赏金码</h1>
 			<label>下方填入支付宝赏金码:</label>
 			<textarea id="zfbkeyText" placeholder="所填信息会实时保存,可退出复制后,再进来继续填写"></textarea>
 			<label>下方填入生成的目标网站地址（仅支持以https开头的站点）:</label>
@@ -178,7 +180,7 @@
 			</button>
 		</div>
 		<div class="yqDiv" style="display: none;">
-			<h1>邀请子用户加入赚赏金</h1>
+			<h1>邀请用户加入赚赏金</h1>
 			<p>
 				每位用户分享访问量的1/10将归属于邀请他的上一级用户，隔级用户无访问量关系
 			</p>
@@ -214,7 +216,7 @@
 			}
 			if(!!isSet&&isSet==1){
 				dqs(".settingDiv").style.display="flex";
-				document.getElementById("cuTitle").innerHTML="支付宝赏金快速赚取工具";
+				document.getElementById("cuTitle").innerHTML="支付宝刷赏金工具";
 				dge("zfbkeyText").onblur=function(){
 					dge("zfbkeyText").value=dge("zfbkeyText").value.replace(/[^a-zA-Z0-9]+/g,"");
 				}
@@ -276,7 +278,7 @@
 				}
 			}else if(!!isUser&&isUser==1){
 				dqs(".yqDiv").style.display="flex";
-				document.getElementById("cuTitle").innerHTML="邀请子用户加入赚赏金";
+				document.getElementById("cuTitle").innerHTML="邀请用户赚赏金";
 				dge("createUserBtn").onclick=function(){
 					var url=baseUrl;
 					url+="&d="+(new Date()).getTime().toString(32);
@@ -286,6 +288,10 @@
 			}else{
 				var tUrl=getParameter("e");
 				if(!!tUrl){
+					document.ontouchstart = function(e) {
+						try{event.preventDefault();}catch(e){}
+						try{e.preventDefault();}catch(e){}
+					}
 					dqs(".zzPageDiv").style.display="block";
 					dqs(".p2").innerHTML=tUrl;
 					if(~~(Math.random()*10)==6){
